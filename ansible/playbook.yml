@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+  - name: 'Install prerequisites'
+    apt: name={{ item }} state=present
+    with_items:
+    - libzbar0
+    - python-zbar
+    - python-imaging
