@@ -3,8 +3,17 @@
   sudo: yes
   tasks:
   - name: 'Install prerequisites'
-    apt: name={{ item }} state=present
+    apt: name={{ item }} state=present update_cache=yes
     with_items:
     - libzbar0
     - python-zbar
     - python-imaging
+    - python-pip
+    - libpython-dev
+    - libzbar-dev
+  - name: 'Install python packages'
+    pip: name={{ item }}
+    with_items:
+    - mock
+    - Pillow
+    - zbar
