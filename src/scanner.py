@@ -11,7 +11,15 @@ class Scanner(object):
     def scan(self):
         # self.image = self.__open_image(self.image_path)
         # self.scanner = self.__create_image_scanner()
-        return []
+        zbar_img = zbar.Image(100, 100, 'Y800', 'test data')
+
+        result = []
+        for symbol in zbar_img:
+            result.append({
+                'data': symbol.data,
+                'location': symbol.location,
+                })
+        return result
 
     # def __open_image(self, image_path):
     #     return Image.open(image_path).convert('L')
