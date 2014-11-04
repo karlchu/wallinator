@@ -1,4 +1,4 @@
-import Image
+from PIL import Image
 import zbar
 
 image_path = '../data/IMG_5240.JPG'
