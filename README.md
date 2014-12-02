@@ -17,3 +17,11 @@ Quick Start
 1. `pip install ansible`
 1. `vagrant up`
 
+Unit Tests
+----------
+
+To run the unit tests, run the following command:
+
+```
+% python -m unittest discover -p *_test.py
+```
